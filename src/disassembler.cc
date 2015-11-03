@@ -66,7 +66,7 @@ void pretty_print()
         auto it = functions.find(i + 0x200);
         if (it != functions.end())
         {
-            std::cout << "\t";
+            std::cout << "\n";
             if (it->first == 0x200)
                 std::cout << "start";
             else
@@ -81,7 +81,8 @@ void pretty_print()
         }
         uint16 op = (mem[i] << 8) | mem[i + 1];
         {
-            std::cout << "0x" << std::hex << std::setw(4) << std::setfill('0') << op << std::dec << "|\t\t";
+            std::cout << "0x" << std::hex << std::setw(4) << std::setfill('0') << i;
+            std::cout << " |0x" << std::hex << std::setw(4) << std::setfill('0') << op << std::dec << "|\t";
             switch ((op & 0xF000) >> 12)
             {
                 case 0:
