@@ -221,7 +221,7 @@ int main(int argc, char** argv)
     std::string file(argv[1]);
 
     functions[0x200] = Type::SUB;
-    std::ifstream rom(file, std::ios::ate);
+    std::ifstream rom(file, std::ios::ate | std::ios::binary);
     if (!rom.is_open())
     {
         std::cerr << "Fill with a valid filename." << std::endl;
