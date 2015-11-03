@@ -6,6 +6,7 @@
 #include <map>
 #include <cstring>
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <fstream>
 
@@ -80,7 +81,7 @@ void pretty_print()
         }
         uint16 op = (mem[i] << 8) | mem[i + 1];
         {
-            std::cout << "0x" << std::hex << op << std::dec << "|\t\t";
+            std::cout << "0x" << std::hex << std::setw(4) << std::setfill('0') << op << std::dec << "|\t\t";
             switch ((op & 0xF000) >> 12)
             {
                 case 0:
